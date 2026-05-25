@@ -1144,6 +1144,18 @@ The transition function $\delta : Q \times \Sigma \to Q$ is:
 $$
 \delta(q, c) =
 \begin{cases}
+\text{IN\_DBL} & \text{if } q = \text{OUTSIDE} \text{ and } c = \text{" (U+0022)} \\
+\text{IN\_SGL} & \text{if } q = \text{OUTSIDE} \text{ and } c = \text{' (U+0027)} \\
+\text{OUTSIDE} & \text{if } q = \text{IN\_DBL} \text{ and } c = \text{" (U+0022)} \\
+\text{OUTSIDE} & \text{if } q = \text{IN\_SGL} \text{ and } c = \text{' (U+0027)} \\
+q & \text{otherwise}
+\end{cases}
+$$
+
+
+$$
+\delta(q, c) =
+\begin{cases}
 \text{IN\_DBL} & \text{if } q = \text{OUTSIDE} \text{ and } c = \texttt{\char96{}"} \\
 \text{IN\_SGL} & \text{if } q = \text{OUTSIDE} \text{ and } c = \texttt{\char96{}'} \\
 \text{OUTSIDE} & \text{if } q = \text{IN\_DBL} \text{ and } c = \texttt{\char96{}"} \\
