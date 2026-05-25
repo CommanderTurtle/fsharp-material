@@ -4,35 +4,8 @@ A complete **F# → GitHub Pages** workflow using Material for MkDocs with **F# 
 
 Designed with subdomains in mind, this orchestrator allows each site folder (`main/`, `docs/`, `app/`, `blog/`) to build locally. GitHub Actions will build artifacts and push output to entirely separate GitHub repositories using token-authenticated git. 
 
-<br>
-<span style="white-space: pre; font-family: system-ui, sans-serif; font-size:18px; color:#666;">
-<p>       ∧＿∧ </p>
-<p>　 (｡･ω･｡)つ━☆・*。</p>
-<p>  ⊂/　    /　            ・゜</p>
-<p>     しーＪ　　　    °。+*°。</p>
-<p>                       .・゜F#                       </p>
-<p>                   ゜｡ﾟﾟ･｡･ﾟﾟ </p>
-<p>                       ╱|、     </p>
-<p>                      (˚ˎ 。7 </p>
-<p>                       |、˜〵    </p>
-<p>                       じしˍ,)ノmkdocs</p>
-</span>
-<br>
-
-<span style="white-space: pre; font-family: system-ui, sans-serif;">
-&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;∧＿∧&#10
-&#x3000;(｡･ω･｡)つ━☆・*。&#10<p>
-&#x2003;⊂/&#x3000;&#x3000;/&#x3000;&#x2003;&#x2003;&#x2003;&#x2003;・゜&#10
-&#x2003;&#x2003;しーＪ&#x3000;&#x3000;&#x3000;&#x2003;&#x2003;°。+*°。&#10
-&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;.・゜F#&#10
-&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;゜｡ﾟﾟ･｡･ﾟﾟ&#10
-&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;╱|、&#10
-&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;(˚ˎ 。7&#10
-&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;|、˜〵&#10
-&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;じしˍ,)ノmkdocs<p>
-</span>
-
-```
+```fsharp
+"""
        ∧＿∧ 
 　    (｡･ω･｡)つ━☆・*。
    ⊂ /　  /　       ・゜
@@ -43,6 +16,7 @@ Designed with subdomains in mind, this orchestrator allows each site folder (`ma
                      (˚ˎ 。7 
                       |、˜〵    
                       じしˍ,)ノmkdocs
+"""
 ```
 
 Write type-safe F# configurations, build beautiful static sites, and deploy them with MkDocs using dynamic content in F#.
