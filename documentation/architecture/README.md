@@ -1137,7 +1137,9 @@ Let the input string be a sequence of characters $`c_1, c_2, \ldots, c_n`$. Defi
 
 $`Q = \{ \text{OUTSIDE}, \text{IN\_DBL}, \text{IN\_SGL} \}`$
 
-$$\Sigma = \{ \texttt{`>'}, \texttt{`"'}, \texttt{`\\''}, \text{other} \}$$
+```math
+\Sigma = \{ \texttt{`>'}, \texttt{`"'}, \texttt{`\\''}, \text{other} \}
+```
 
 The transition function $\delta : Q \times \Sigma \to Q$ is:
 
