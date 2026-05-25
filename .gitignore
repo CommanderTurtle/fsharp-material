@@ -1,0 +1,140 @@
+# =============================================================================
+# Html2Giraffe Gitignore
+# =============================================================================
+# NOTE: This repository only commits F# source files (.fs).
+# Generated files are built during CI/CD and never committed.
+# =============================================================================
+
+# =============================================================================
+# F# / .NET
+# =============================================================================
+bin/
+obj/
+*.nupkg
+*.snupkg
+packages/
+*.user
+*.suo
+*.cache
+*.dll
+*.exe
+*.pdb
+*.mdb
+*.log
+
+# Paket
+.paket/
+paket-files/
+paket.lock
+
+# F# Interactive
+*.fsx~ 
+*.fs~
+
+# =============================================================================
+# Generated Config Files (Built from .fs during CI/CD)
+# =============================================================================
+# These are generated from F# config files:
+# - mkdocs.fs → mkdocs.yml
+# - pyproject.fs → pyproject.toml
+# - steamedyam-*.fs → *.yml (workflows, committed by _generator.yml)
+
+# MkDocs and Python configs (generated per-build)
+mkdocs.yml
+pyproject.toml
+
+# Generic sharp* translations (generated per-build)
+*.py
+*.js
+*.ts
+*.css
+*.json
+*.toml
+*.xml
+*.sql
+*.sh
+Dockerfile
+
+# NOTE: Workflow files (.github/workflows/*.yml) are SPECIAL:
+# - _generator.yml exists in repo (source of truth for generation)
+# - steamedyam-*.fs files are sources
+# - Generated .yml files ARE committed by _generator.yml so GitHub can use them
+# - See ARCHITECTURE.md for details
+
+# =============================================================================
+# Generated Site Files
+# =============================================================================
+_site/
+site/
+public/
+dist/
+
+# Per-folder .gitignore files handle generated index.md and index.html
+
+# =============================================================================
+# MkDocs
+# =============================================================================
+*.mkdocs-cache/
+.cache/
+
+# =============================================================================
+# Python
+# =============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# =============================================================================
+# IDEs
+# =============================================================================
+.vscode/
+*.code-workspace
+.idea/
+*.iml
+*.iws
+out/
+.vs/
+*.csproj.user
+*.vbproj.user
+
+# =============================================================================
+# OS Files
+# =============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# =============================================================================
+# Logs and Temp
+# =============================================================================
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.swp
+*.swo
+*~
+
+# =============================================================================
+# Secrets (Never commit!)
+# =============================================================================
+*.pem
+*.key
+.env
+.env.local
+secrets.json
+credentials.json
