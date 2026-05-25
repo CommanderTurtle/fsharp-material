@@ -1057,17 +1057,17 @@ stateDiagram-v2
 
     State1 : STATE 1 — Generation
     State1 : bool = ABSENT
-    State1 : Action = Translate F# → YAML
-    State1 : Action = Create .sharpendabot-bool
-    State1 : Action = git push (triggers State 2)
+    State1 : Action1 = Translate F# → YAML
+    State1 : Action2 = Create .sharpendabot-bool
+    State1 : Action3 = git push (triggers State 2)
 
     State1 --> State2 : .sharpendabot-bool exists
 
     State2 : STATE 2 — Cleanup
     State2 : bool = PRESENT
-    State2 : Action = Delete non-essential YMLs
-    State2 : Action = Delete .sharpendabot-bool
-    State2 : Action = git push (returns to State 1)
+    State2 : Action1 = Delete non-essential YMLs
+    State2 : Action2 = Delete .sharpendabot-bool
+    State2 : Action3 = git push (returns to State 1)
 
     note right of State1
         GitHub evaluates workflows BEFORE running.
