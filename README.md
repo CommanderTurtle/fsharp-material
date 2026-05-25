@@ -972,9 +972,4 @@ GitHub Free permits excellent thresholds before turning sites off:
     
 - **Builds:** A soft limit of 10 builds per hour per repo. Since you are building the files in your master orchestrator via uv/dotnet, and simply pushing static results via Git—this build restriction mostly doesn't apply to you.
 
-<br>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=CommanderTurtle/fsharp-material&style=landscape1&theme=dark" />
-  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=CommanderTurtle/fsharp-material&style=landscape1" />
-  <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=CommanderTurtle/fsharp-material&style=landscape1" />
-</picture>
+[![Star History Chart](https://api.star-history.com/chart?repos=CommanderTurtle/fsharp-material&type=date&legend=top-left)](https://www.star-history.com/?repos=CommanderTurtle%2Ffsharp-material&type=date&legend=top-left)
