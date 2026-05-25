@@ -1,0 +1,128 @@
+module RepoConfig
+
+// Repository mapping configuration for cross-repo deployment.
+// Copy to .github-repo-config.fs and customize for your setup.
+
+type RepoTarget = {
+    Owner: string
+    Repo: string
+    Branch: string
+    Cname: string option
+    TokenName: string
+}
+
+type SiteMapping = {
+    SourceFolder: string
+    BuildCommand: string option
+    OutputFolder: string
+    Target: RepoTarget
+}
+
+let owner =
+    System.Environment.GetEnvironmentVariable("GITHUB_REPOSITORY_OWNER")
+    |> Option.ofObj
+    |> Option.defaultValue "your-username"
+
+let sites : SiteMapping list = [
+    {
+        SourceFolder = "main"
+        BuildCommand = Some (sprintf "cd %s && mkdocs build -f mkdocs.yml" "main")
+        OutputFolder = "site"
+        Target = {
+            Owner = owner
+            Repo = sprintf "%s.github.io" owner
+            Branch = "main"
+            Cname = Some "shel.sh"
+            TokenName = "GH_PAGES_TOKEN"
+        }
+    }
+    {
+        SourceFolder = "docs"
+        BuildCommand = Some (sprintf "cd %s && mkdocs build -f mkdocs.yml" "docs")
+        OutputFolder = "site"
+        Target = {
+            Owner = owner
+            Repo = "docs-pages"
+            Branch = "main"
+            Cname = Some "docs.shel.sh"
+            TokenName = "GH_PAGES_TOKEN"
+        }
+    }
+    {
+        SourceFolder = "app"
+        BuildCommand = Some (sprintf "cd %s && mkdocs build -f mkdocs.yml" "app")
+        OutputFolder = "site"
+        Target = {
+            Owner = owner
+            Repo = "app-pages"
+            Branch = "main"
+            Cname = Some "app.shel.sh"
+            TokenName = "GH_PAGES_TOKEN"
+        }
+    }
+    {
+        SourceFolder = "blog"
+        BuildCommand = Some (sprintf "cd %s && mkdocs build -f mkdocs.yml" "blog")
+        OutputFolder = "site"
+        Target = {
+            Owner = owner
+            Repo = "blog-pages"
+            Branch = "main"
+            Cname = Some "blog.shel.sh"
+            TokenName = "GH_PAGES_TOKEN"
+        }
+    }
+]
+
+let renderDeployScript (mapping: SiteMapping) : string =
+    let target = mapping.Target
+    let tokenRef = sprintf "${%s:-${GITHUB_TOKEN}}" target.TokenName
+    let buildCmd =
+        match mapping.BuildCommand with
+        | Some cmd -> cmd
+        | None -> ""
+
+    let buildBlock =
+        if System.String.IsNullOrEmpty(buildCmd) then "# No build command configured"
+        else buildCmd
+
+    sprintf """#!/bin/bash
+set -e
+FOLDER="%s"
+OUTPUT="%s"
+OWNER="%s"
+REPO="%s"
+BRANCH="%s"
+TOKEN="%s"
+CNAME="%s"
+
+echo "Deploying ${FOLDER} -> ${OWNER}/${REPO}:${BRANCH}..."
+
+# Build step
+%s
+
+# Push to target repo
+cd "${FOLDER}/${OUTPUT}"
+git init
+git config user.name "github-actions[bot]"
+git config user.email "github-actions[bot]@users.noreply.github.com"
+git remote add target "https://x-access-token:${TOKEN}@github.com/${OWNER}/${REPO}.git" 2>/dev/null || git remote set-url target "https://x-access-token:${TOKEN}@github.com/${OWNER}/${REPO}.git"
+
+if [ -n "${CNAME}" ]; then
+    echo "${CNAME}" > CNAME
+fi
+
+git add .
+git commit -m "Deploy ${FOLDER} [skip ci]" || echo "No changes"
+git push target HEAD:"${BRANCH}" --force
+
+echo "Deployed ${FOLDER} successfully!"
+"""
+        mapping.SourceFolder
+        mapping.OutputFolder
+        target.Owner
+        target.Repo
+        target.Branch
+        tokenRef
+        (target.Cname |> Option.defaultValue "")
+        buildBlock
