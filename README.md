@@ -6,16 +6,16 @@ Designed with subdomains in mind, this orchestrator allows each site folder (`ma
 
 <br>
 <span style="white-space: pre; font-family: system-ui, sans-serif; font-size:18px; color:#666;">
-       ∧＿∧ 
-　 (｡･ω･｡)つ━☆・*。
-  ⊂/　    /　            ・゜
-     しーＪ　　　    °。+*°。
-                       .・゜F#                       
-                   ゜｡ﾟﾟ･｡･ﾟﾟ 
-                       ╱|、     
-                      (˚ˎ 。7 
-                       |、˜〵    
-                       じしˍ,)ノmkdocs
+<p>       ∧＿∧ </p>
+<p>　 (｡･ω･｡)つ━☆・*。</p>
+<p>  ⊂/　    /　            ・゜</p>
+<p>     しーＪ　　　    °。+*°。</p>
+<p>                       .・゜F#                       </p>
+<p>                   ゜｡ﾟﾟ･｡･ﾟﾟ </p>
+<p>                       ╱|、     </p>
+<p>                      (˚ˎ 。7 </p>
+<p>                       |、˜〵    </p>
+<p>                       じしˍ,)ノmkdocs</p>
 </span>
 <br>
 
