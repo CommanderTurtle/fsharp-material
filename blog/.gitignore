@@ -1,0 +1,15 @@
+# Generated files - DO NOT COMMIT
+# These are generated from .fs sources during build
+
+# MkDocs config
+mkdocs.yml
+pyproject.toml
+
+# Generated from indexmd.fs
+index.md
+
+# Generated from index.fs
+index.html
+
+# MkDocs output
+site/
