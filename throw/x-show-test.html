@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Alpine.js Test</title></head>
+<body>
+<div x-show="length > 0" class="container">
+  <h1>Hello World</h1>
+  <p>This tests quote-aware parsing with > in attributes.</p>
+</div>
+<div x-data="{ open: false }">
+  <button @click="open = !open">Toggle</button>
+  <div x-show="open" style="display: none;">
+    <p>Hidden content with <strong>bold</strong> text.</p>
+  </div>
+</div>
+</body>
+</html>

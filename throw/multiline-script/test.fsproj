@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net10.0</TargetFramework><OutputType>Exe</OutputType></PropertyGroup>
+  <ItemGroup><PackageReference Include="Giraffe.ViewEngine" Version="1.4.0" /></ItemGroup>
+  <ItemGroup><Compile Include="index.fs" /><Compile Include="Main.fs" /></ItemGroup>
+</Project>

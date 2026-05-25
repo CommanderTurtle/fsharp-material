@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alpine Test</title>
+</head>
+<body>
+    <div x-data="{ open: false, items: [] }"
+         x-show="open && items.length > 0"
+         x-bind:class="open ? 'active' : 'inactive'">
+        <p>Content with > in attribute</p>
+    </div>
+    <button @click="open = !open">Toggle</button>
+    <input type="text" x-model="search" placeholder="Type > or < here">
+</body>
+</html>
