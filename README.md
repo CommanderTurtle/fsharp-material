@@ -4,6 +4,21 @@ A complete **F# → GitHub Pages** workflow using Material for MkDocs with **F# 
 
 Designed with subdomains in mind, this orchestrator allows each site folder (`main/`, `docs/`, `app/`, `blog/`) to build locally. GitHub Actions will build artifacts and push output to entirely separate GitHub repositories using token-authenticated git. 
 
+<br>
+<span style="white-space: pre; font-family: system-ui, sans-serif; font-size:18px; color:#666;">
+       ∧＿∧ 
+　 (｡･ω･｡)つ━☆・*。
+  ⊂/　    /　            ・゜
+     しーＪ　　　    °。+*°。
+                       .・゜F#                       
+                   ゜｡ﾟﾟ･｡･ﾟﾟ 
+                       ╱|、     
+                      (˚ˎ 。7 
+                       |、˜〵    
+                       じしˍ,)ノmkdocs
+</span>
+<br>
+
 ```
        ∧＿∧ 
 　    (｡･ω･｡)つ━☆・*。
