@@ -36,7 +36,7 @@ app/docs/widgets/my-page/index.fs -> app/docs/widgets/my-page/index.html
 - `index.fs` (Giraffe DSL) -> rendered to `index.html`
 - `indexmd.fs` (Markdown generator) -> rendered to `index.md`
 
-And the HTML page will be served.
+And the HTML page will be served if they’re in the same directory. This is standard Jekyll/MkDocs behavior.
 
 ## What Gets Converted
 
