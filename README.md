@@ -19,7 +19,6 @@ Designed with subdomains in mind, this orchestrator allows each site folder (`ma
 
 Write type-safe F# configurations, build beautiful static sites, and deploy them with MkDocs using dynamic content in F#.
 
----
 # Table of Contents
 (Quick Jumps)
 1. [Overview](#table-of-contents)
@@ -40,6 +39,7 @@ Write type-safe F# configurations, build beautiful static sites, and deploy them
 2. [Architecture Diagrams](./documentation/architecture/README.md#d-2-workflow-state-machine)
 3. [Mathematical Foundations](./documentation/architecture/README.md#mathematical-evolution)
 4. [License](./LICENSE)
+
 ## Architecture
 
 - **F#-first configuration** - All configs are F# sources that generate YAML/TOML
