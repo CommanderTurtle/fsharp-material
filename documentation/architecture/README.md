@@ -1133,9 +1133,9 @@ sequenceDiagram
 
 The `findNextTagEnd` algorithm is a finite-state automaton that tracks quote nesting depth to correctly identify tag boundaries even when attribute values contain `>`. Formally:
 
-Let the input string be a sequence of characters $c_1, c_2, \ldots, c_n$. Define the state machine $\mathcal{M} = (Q, \Sigma, \delta, q_0, F)$ where:
+Let the input string be a sequence of characters $`c_1, c_2, \ldots, c_n`$. Define the state machine $`\mathcal{M} = (Q, \Sigma, \delta, q_0, F)`$ where:
 
-$$Q = \{ \text{OUTSIDE}, \text{IN\_DBL}, \text{IN\_SGL} \}$$
+$`Q = \{ \text{OUTSIDE}, \text{IN\_DBL}, \text{IN\_SGL} \}`$
 
 $$\Sigma = \{ \texttt{`>'}, \texttt{`"'}, \texttt{`\\''}, \text{other} \}$$
 
