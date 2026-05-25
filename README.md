@@ -267,7 +267,7 @@ Repo = "blog-pages"                    // Blog target repo
 
 The `shel.sh` domain is used throughout the documentation is a placeholder. Replace all occurrences with your actual domain.
 
-Create your own file conversion schema! Preview conventions in `.github/sources/` -- you can rename these to whatever you prefer.
+Create your own file conversion schema! Preview conventions in `.github/workflows/` -- you can rename these to whatever you prefer. [View Code](https://github.com/CommanderTurtle/fsharp-material/blob/main/.github/workflows/sharpendabot.yml) CTRL+F: "Steamed"
 
 ![](https://media.tenor.com/0QAppxwZVtkAAAAC/steamed-hams-the-simpsons.gif)
 
