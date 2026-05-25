@@ -11,5 +11,8 @@ index.md
 # Generated from index.fs
 index.html
 
+# Generated from sharpcss.fs
+extra.css
+
 # MkDocs output
 site/
