@@ -21,24 +21,24 @@ Write type-safe F# configurations, build beautiful static sites, and deploy them
 
 # Table of Contents
 (Quick Jumps)
-1. [Overview](#table-of-contents)
-2. [Features](#features)
-3. [Local Setup Guide](#3-local-development)
-4. [FAQ](#4-what-to-configure)
-   - 4.1 [GitHub Token + Secret](#faq)
-   - 4.2 ['I'm a complete beginner'](#index-html-vs-index-md-priority)
-   - 4.3 [Nameschema / Individualization](#2-configure-repository-mapping)
-1. [Guides for Devs](./documentation/architecture/README.md#overview-of-all-scripts)
-   - 5.1 [Giraffe Attribute Shortcuts](./documentation/architecture/README.md#example-5-void-elements)
-   - 5.2 [Triple-Quote Safety](./documentation/fsharp-in-material/README.md#migration-guide)
-   - 5.3 [How to /throw/](./documentation/how-to-throw/README.md)
-   - 5.4 [Module Naming for index.fs Files](#creating-sites-things-to-know)
-   - 5.5 [Sharpendabot bool (High-Level Overview)](#2-sharpendabot-bool-high-level-overview)
-   - 5.6 [Configuring a new index.md](#indexmd-fs-markdown-content)
-1. [Full Documentation (Wiki Hub)](#recommended-extra-documentation)
-2. [Architecture Diagrams](./documentation/architecture/README.md#d-2-workflow-state-machine)
-3. [Mathematical Foundations](./documentation/architecture/README.md#mathematical-evolution)
-4. [License](./LICENSE)
+1. [Overview](https://github.com/CommanderTurtle/fsharp-material#table-of-contents)
+2. [Features](https://github.com/CommanderTurtle/fsharp-material#features)
+3. [Local Setup Guide](https://github.com/CommanderTurtle/fsharp-material#3-local-development)
+4. [FAQ](https://github.com/CommanderTurtle/fsharp-material#4-what-to-configure)
+   - 4.1 [GitHub Token + Secret](https://github.com/CommanderTurtle/fsharp-material#faq)
+   - 4.2 ['I'm a complete beginner'](https://github.com/CommanderTurtle/fsharp-material#index-html-vs-index-md-priority)
+   - 4.3 [Nameschema / Individualization](https://github.com/CommanderTurtle/fsharp-material#2-configure-repository-mapping)
+1. [Guides for Devs](./documentation/architecture/#overview-of-all-scripts)
+   - 5.1 [Giraffe Attribute Shortcuts](./documentation/architecture/#example-5-void-elements)
+   - 5.2 [Triple-Quote Safety](./documentation/fsharp-in-material/#migration-guide)
+   - 5.3 [How to /throw/](./documentation/how-to-throw)
+   - 5.4 [Module Naming for index.fs Files](https://github.com/CommanderTurtle/fsharp-material#creating-sites-things-to-know)
+   - 5.5 [Sharpendabot bool (High-Level Overview)](https://github.com/CommanderTurtle/fsharp-material#2-sharpendabot-bool-high-level-overview)
+   - 5.6 [Configuring a new index.md](https://github.com/CommanderTurtle/fsharp-material#indexmd-fs-markdown-content)
+1. [Full Documentation (Wiki Hub)](https://github.com/CommanderTurtle/fsharp-material#recommended-extra-documentation)
+2. [Architecture Diagrams](./documentation/architecture/#d-2-workflow-state-machine)
+3. [Mathematical Foundations](./documentation/architecture/#mathematical-evolution)
+4. [License](https://raw.githubusercontent.com/CommanderTurtle/fsharp-material/refs/heads/main/LICENSE)
 
 ## Architecture
 
@@ -426,12 +426,12 @@ During initialization, Actions will automatically pull the latest Mkdocs, Materi
 > `documentation/fsharp-in-material/README.md` : [/fsharp-in-material/README.md](./documentation/fsharp-in-material/README.md)
 > > Documentation on string safety and features, including safety with embedded content
 > 
-> `documentation/how-to-throw/README.md` : [/how-to-throw/README.md](./documentation/how-to-throw/README.md)
+> `documentation/how-to-throw/README.md` : [/how-to-throw/README.md](./documentation/how-to-throw)
 > > Documentation on quick-starting with the /throw/ engine's conversion: HTML to F# (index.html->index.fs)
 
 
-Lastly, extra inspection of automatic workflows are available at [/workflows-in-fsharp/README.md](./documentation/workflows-in-fsharp/README.md)
-Documentation files include mermaid diagrams outlining deep-level mechanics [in the #architecture-diagrams](./documentation/architecture/README.md#architecture-diagrams)
+Lastly, extra inspection of automatic workflows are available at [/workflows-in-fsharp/README.md](./documentation/workflows-in-fsharp)
+Documentation files include mermaid diagrams outlining deep-level mechanics [in the #architecture-diagrams](./documentation/architecture/#architecture-diagrams)
 
 ---
 ## Repository Mapping
@@ -596,7 +596,7 @@ let render() =
 
 The deploy workflow looks for `let render()` and calls it to produce `index.html`.
 
-Read more about automatic HTML conversion (index.html->index.fs) in the docs: [/how-to-throw/README.md](./documentation/how-to-throw/README.md)
+Read more about automatic HTML conversion (index.html->index.fs) in the docs: [/how-to-throw/README.md](./documentation/how-to-throw)
 #### 2. Sharpendabot bool (High-Level Overview)
 
 > **Read:** `documentation/workflows-in-fsharp/README.md`, section "The Problem" + "The Solution"
@@ -646,7 +646,7 @@ Read more about automatic HTML conversion (index.html->index.fs) in the docs: [/
 
 **Key implication:** Because Pages serves the last deployed snapshot, you can safely delete all workflow YAMLs, regenerate them from F# sources, and your site stays live the entire time. No downtime.
 
-Read more about the workflows to get a full overview at: [/workflows-in-fsharp/README.md](./documentation/workflows-in-fsharp/README.md)
+Read more about the workflows to get a full overview at: [/workflows-in-fsharp/README.md](./documentation/workflows-in-fsharp)
 
 #### 3 Configuring mkdocs.fs and indexmd.fs as a Newbie
 
@@ -774,7 +774,7 @@ The current `Components.fs` has significantly expanded. The full API now include
 - `searchAndMatch`, `appendToMatching`, `walkTree` (AST utilities)
 - `HtmlAst` module for programmatic HTML manipulation
 
-Read more about this repo's architecture from the docs page: [/architecture/README.md](./documentation/architecture/README.md)
+Read more about this repo's architecture from the docs page: [/architecture/README.md](./documentation/architecture)
 
 Read more about Material from the official documentation here: [Material by Squidfunk](https://squidfunk.github.io/mkdocs-material/)
 
