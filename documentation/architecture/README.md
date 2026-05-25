@@ -1144,12 +1144,13 @@ The transition function $\delta : Q \times \Sigma \to Q$ is:
 $$
 \delta(q, c) =
 \begin{cases}
-\text{IN\_DBL} & \text{if } q = \text{OUTSIDE} \text{ and } c = \texttt{`"'} \\
-\text{IN\_SGL} & \text{if } q = \text{OUTSIDE} \text{ and } c = \texttt{`\\'''} \\
-\text{OUTSIDE} & \text{if } q = \text{IN\_DBL} \text{ and } c = \texttt{`"'} \\
-\text{OUTSIDE} & \text{if } q = \text{IN\_SGL} \text{ and } c = \texttt{`\\'''} \\
+\text{IN\_DBL} & \text{if } q = \text{OUTSIDE} \text{ and } c = \texttt{\char96{}"} \\
+\text{IN\_SGL} & \text{if } q = \text{OUTSIDE} \text{ and } c = \texttt{\char96{}'} \\
+\text{OUTSIDE} & \text{if } q = \text{IN\_DBL} \text{ and } c = \texttt{\char96{}"} \\
+\text{OUTSIDE} & \text{if } q = \text{IN\_SGL} \text{ and } c = \texttt{\char96{}'} \\
 q & \text{otherwise}
-\end{cases}$$
+\end{cases}
+$$
 
 A tag boundary at position $i$ is found when:
 
