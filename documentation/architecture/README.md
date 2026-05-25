@@ -50,7 +50,7 @@ Each site folder (`main/`, `docs/`, `app/`, `blog/`) builds locally and pushes i
 ```
 
 ## Overview of all scripts:
-[/workflows-in-fsharp/](../workflows-in-fsharp/README.md) contains all "workflow-only" scripts not listed below
+[/workflows-in-fsharp/](https://github.com/CommanderTurtle/fsharp-material/tree/main/documentation/workflows-in-fsharp) contains all "workflow-only" scripts not listed below
 
 ```
 │   └── generator/                     # HTML converter and tokenization tools
@@ -185,7 +185,7 @@ let card (body: string) =
 ```
 
 The current exemplary `Components.fs` has significantly expanded. The full API now includes:
-- `admonition`, `card`, `featureGrid`, `button`, `badge` (see [#complete-newbie-pattern](../../README.md#complete-newbie-pattern))
+- `admonition`, `card`, `featureGrid`, `button`, `badge` (see [#complete-newbie-pattern](https://github.com/CommanderTurtle/fsharp-material/#complete-newbie-pattern))
 - `hero` (title/subtitle/CTA hero section)
 - `codeBlockWithCopy` (code blocks with copy-to-clipboard)
 - `tabContainer` (tabbed content panels)
