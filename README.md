@@ -41,7 +41,7 @@ Write type-safe F# configurations, build beautiful static sites, and deploy them
 2. [Architecture Diagrams](https://github.com/CommanderTurtle/fsharp-material/tree/main/documentation/architecture/#d-2-workflow-state-machine)
 3. [Mathematical Foundations](https://github.com/CommanderTurtle/fsharp-material/tree/main/documentation/architecture/#mathematical-evolution)
 4. [License](https://raw.githubusercontent.com/CommanderTurtle/fsharp-material/refs/heads/main/LICENSE)
-https://github.com/CommanderTurtle/fsharp-material/tree/main/documentation/architecture#overview
+
 ## Architecture
 
 - **F#-first configuration** - All configs are F# sources that generate YAML/TOML
