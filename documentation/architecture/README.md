@@ -1141,28 +1141,24 @@ $$\Sigma = \{ \texttt{`>'}, \texttt{`"'}, \texttt{`\\''}, \text{other} \}$$
 
 The transition function $\delta : Q \times \Sigma \to Q$ is:
 
-$$
+```math
 \delta(q, c) =
 \begin{cases}
-\text{IN\_DBL} & \text{if } q = \text{OUTSIDE} \text{ and } c = \text{DBLQ} \\
-\text{IN\_SGL} & \text{if } q = \text{OUTSIDE} \text{ and } c = \text{SGLQ} \\
-\text{OUTSIDE} & \text{if } q = \text{IN\_DBL} \text{ and } c = \text{DBLQ} \\
-\text{OUTSIDE} & \text{if } q = \text{IN\_SGL} \text{ and } c = \text{SGLQ} \\
+\text{IN\_DBL} & \text{if } q = \text{OUTSIDE} \text{ and } c = \texttt{`"'} \\
+\text{IN\_SGL} & \text{if } q = \text{OUTSIDE} \text{ and } c = \texttt{`\\'''} \\
+\text{OUTSIDE} & \text{if } q = \text{IN\_DBL} \text{ and } c = \texttt{`"'} \\
+\text{OUTSIDE} & \text{if } q = \text{IN\_SGL} \text{ and } c = \texttt{`\\'''} \\
 q & \text{otherwise}
 \end{cases}
-$$
-
-Where:
-
-- **DBLQ** = the double‑quote character `"`.
-- **SGLQ** = the single‑quote character `'`.
-
+```
 
 A tag boundary at position $i$ is found when:
 
-$$c_i = \texttt{`>'} \quad \land \quad q_{i-1} = \text{OUTSIDE}$$
+```math
+`c_i = \texttt{`>'} \quad \land \quad q_{i-1} = \text{OUTSIDE}
+```
 
-This guarantees that any `>` appearing inside a quoted attribute value (e.g., `x-show="count > 0"`) is **not** misidentified as a tag terminator. The algorithm runs in $O(n)$ time with $O(1)$ space.
+This guarantees that any `>` appearing inside a quoted attribute value (e.g., `x-show="count > 0"`) is **not** misidentified as a tag terminator. The algorithm runs in $`O(n)`$ time with $`O(1)`$ space.
 
 ### Why This Matters
 
@@ -1221,13 +1217,21 @@ where $\ell$ is the level and $\oplus$ is string concatenation. For an HTML docu
 
 Let $s$ be a string of length $|s|$. Define the triple-quote density:
 
-$$\rho(s) = \frac{|\{i : s_i s_{i+1} s_{i+2} = \texttt{`"""'}\}|}{|s| - 2}$$
+```math
+\rho(s) = \frac{|\{i : s_i s_{i+1} s_{i+2} = \texttt{`"""'}\}|}{|s| - 2}
+```
 
 The engine's string safety guarantee: for any $\rho(s)$, the output is well-formed F# because:
 
-$$\text{output}(s) = \begin{cases}
+```math
+\text{output}(s) = \begin{cases}
 \texttt{rawText ("""} s \texttt{""")} & \text{if } \rho(s) = 0 \\
 \texttt{rawText (} \bigoplus_{i} \texttt{"""} p_i \texttt{"""} \texttt{)} & \text{if } \rho(s) > 0
-\end{cases}$$
+\end{cases}
+```
 
-where $p_i$ are the parts of $s$ split on $\texttt{`"""'}$ and $\oplus$ is the `" + "` concatenation operator. This construction guarantees $\rho(p_i) = 0$ for all $i$ by definition, making the output always parseable.
+where $p_i$ are the parts of $s$ split on 
+```math
+\texttt{`"""'}
+```
+ and $\oplus$ is the `" + "` concatenation operator. This construction guarantees $\rho(p_i) = 0$ for all $i$ by definition, making the output always parseable.
