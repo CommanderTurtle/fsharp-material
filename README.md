@@ -25,7 +25,7 @@ Write type-safe F# configurations, build beautiful static sites, and deploy them
 (Quick Jumps)
 1. [Overview](https://github.com/CommanderTurtle/fsharp-material/#table-of-contents)
 2. [Features](https://github.com/CommanderTurtle/fsharp-material/#features)
-3. [Local Setup Guide](https://github.com/CommanderTurtle/fsharp-material/#3-local-development)
+3. [Local Setup Guide](https://github.com/CommanderTurtle/fsharp-material/#quick-start)
 4. [FAQ](https://github.com/CommanderTurtle/fsharp-material/#4-what-to-configure)
    - 4.1 [GitHub Token + Secret](https://github.com/CommanderTurtle/fsharp-material/#faq)
    - 4.2 ['I'm a complete beginner'](https://github.com/CommanderTurtle/fsharp-material/#indexhtml-vs-indexmd-priority)
